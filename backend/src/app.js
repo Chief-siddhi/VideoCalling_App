@@ -9,14 +9,11 @@ import cors from "cors";
 import userRoutes from "./routes/users.routes.js";
 import cors from "cors";
 
-// Development ke liye
 app.use(cors({
-  origin: process.env.NODE_ENV === "production" 
-    ? ["https://your-frontend-domain.com"] 
-    : ["http://localhost:3000", "http://localhost:3001"],
+  origin: "https://videocallingfrontend-vfm6.onrender.com",
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
-  credentials: true  // ✅ Agar cookies/auth use kar rahe hain
+  credentials: true
 }));
 
 const app = express();
