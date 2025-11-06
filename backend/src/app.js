@@ -7,6 +7,14 @@ import { connectToSocket } from "./controllers/socketManager.js";
 
 import cors from "cors";
 import userRoutes from "./routes/users.routes.js";
+import cors from "cors";
+
+// Allow all origins
+app.use(cors({
+  origin: "*", // Accept requests from all URLs
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"]
+}));
 
 const app = express();
 const server = createServer(app);
