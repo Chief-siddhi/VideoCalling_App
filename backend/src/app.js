@@ -9,11 +9,14 @@ import cors from "cors";
 import userRoutes from "./routes/users.routes.js";
 import cors from "cors";
 
-// Allow all origins
+// Development ke liye
 app.use(cors({
-  origin: "*", // Accept requests from all URLs
+  origin: process.env.NODE_ENV === "production" 
+    ? ["https://your-frontend-domain.com"] 
+    : ["http://localhost:3000", "http://localhost:3001"],
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"]
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true  // ✅ Agar cookies/auth use kar rahe hain
 }));
 
 const app = express();
