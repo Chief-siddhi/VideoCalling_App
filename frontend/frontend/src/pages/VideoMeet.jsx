@@ -15,10 +15,10 @@ import ChatIcon from '@mui/icons-material/Chat';
 import CloseIcon from '@mui/icons-material/Close';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { useNavigate } from 'react-router';
-
+import server from '../environment';
 import styles from "../styles/videoComponent.module.css";
 
-const server_url = "http://localhost:8000";
+const server_url = server;
 
 const peerConfigConnections = {
     "iceServers": [
